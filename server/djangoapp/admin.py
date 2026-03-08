@@ -17,14 +17,18 @@ admin.site.register(CarModel)
 
 # Register models here
 # Inline class for CarModel to be displayed within CarMake admin
+
+
 class CarModelInline(admin.TabularInline):
     model = CarModel
+
 
 # Admin class for CarMake with CarModelInline
 class CarMakeAdmin(admin.ModelAdmin):
     inlines = [CarModelInline]
     list_display = ('name', 'country', 'founded_year')
     search_fields = ['name', 'country']
+
 
 # Admin class for CarModel
 class CarModelAdmin(admin.ModelAdmin):
